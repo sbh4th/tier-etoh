@@ -1,0 +1,42 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/samharper/git/tier-etoh/Reports/report.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}13 Nov 2020, 14:33:25
+{txt}
+{com}. //_1q
+.   quietly use "../Analysis-Data/analysis.dta", clear
+{txt}
+{com}.   label list drunk_labels
+{txt}drunk_labels:
+{res}           0 2 or fewer
+           1 3 or more
+{txt}
+{com}. //_2q
+. tabulate drunk
+
+{txt}Times drunk {c |}
+    past 30 {c |}
+       days {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+ 2 or fewer {c |}{res}      1,871       68.86       68.86
+{txt}  3 or more {c |}{res}        846       31.14      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      2,717      100.00
+{txt}
+{com}. //_3q
+.     graph bar, over(drunk)  ///
+>           ytitle(Percent Frequency)  ///
+>           ti("Percent Frequency Distribution of drunk") ///
+>           legend(label(1 0) label(2 1))
+{res}{txt}
+{com}. //_^
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/samharper/git/tier-etoh/Reports/report.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}13 Nov 2020, 14:33:27
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
