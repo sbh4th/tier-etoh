@@ -3,9 +3,17 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/samharper/git/tier-etoh/Reports/report.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}13 Nov 2020, 14:33:25
+ {txt}opened on:  {res} 4 Dec 2020, 12:57:45
 {txt}
 {com}. //_1q
+.   quietly {c -(}
+{txt}
+{com}. 
+. //_2
+. display r(N)
+{res}2717
+{txt}
+{com}. //_3q
 .   quietly use "../Analysis-Data/analysis.dta", clear
 {txt}
 {com}.   label list drunk_labels
@@ -13,7 +21,7 @@
 {res}           0 2 or fewer
            1 3 or more
 {txt}
-{com}. //_2q
+{com}. //_4q
 . tabulate drunk
 
 {txt}Times drunk {c |}
@@ -25,18 +33,88 @@
 {txt}{hline 12}{c +}{hline 35}
       Total {c |}{res}      2,717      100.00
 {txt}
-{com}. //_3q
-.     graph bar, over(drunk)  ///
+{com}. //_5q
+.   misstable summarize drunk
+{txt}(variables nonmissing or string)
+
+{com}. //_6q
+.     qui graph bar, over(drunk)  ///
 >           ytitle(Percent Frequency)  ///
 >           ti("Percent Frequency Distribution of drunk") ///
 >           legend(label(1 0) label(2 1))
-{res}{txt}
+{txt}
+{com}.   qui graph export "../Graphs/For-Data-Appendix/drunk-distn.png", replace
+{txt}
+{com}. //_7q
+.   quietly use "../Analysis-Data/analysis.dta", clear
+{txt}
+{com}.   label list hsdrunk_labels
+{txt}hsdrunk_labels:
+{res}           0 2 or fewer
+           1 3 or more
+{txt}
+{com}. //_8q
+. tabulate hsdrunk
+
+  {txt}Times had {c |}
+  5+ drinks {c |}
+senior year {c |}
+    of high {c |}
+     school {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+ 2 or fewer {c |}{res}      1,703       62.68       62.68
+{txt}  3 or more {c |}{res}      1,014       37.32      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      2,717      100.00
+{txt}
+{com}. //_9q
+.   misstable summarize hsdrunk
+{txt}(variables nonmissing or string)
+
+{com}. //_10q
+.     qui graph bar, over(hsdrunk)  ///
+>           ytitle(Percent Frequency)  ///
+>           ti("Percent Frequency Distribution of hsdrunk") ///
+>           legend(label(1 0) label(2 1))
+{txt}
+{com}.   qui graph export "../Graphs/For-Report/hsdrunk-drunk.png", replace
+{txt}
+{com}. //_11q
+.   label list free_labels
+{txt}free_labels:
+{res}           0 No
+           1 Yes
+{txt}
+{com}. //_12q
+. tabulate free
+
+    {txt}Live in {c |}
+alcohol-fre {c |}
+  e housing {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+         No {c |}{res}      1,909       70.26       70.26
+{txt}        Yes {c |}{res}        808       29.74      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      2,717      100.00
+{txt}
+{com}. //_13q
+.   misstable summarize free
+{txt}(variables nonmissing or string)
+
+{com}. //_14q
+.     qui graph bar, over(free)  ///
+>           ytitle(Percent Frequency)  ///
+>           ti("Percent Frequency Distribution of free") ///
+>           legend(label(1 0) label(2 1))
+{txt}
+{com}.   qui graph export "../Graphs/For-Report/free-dist.png", replace
+{txt}
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/samharper/git/tier-etoh/Reports/report.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}13 Nov 2020, 14:33:27
+ {txt}closed on:  {res} 4 Dec 2020, 12:57:48
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

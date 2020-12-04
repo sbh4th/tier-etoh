@@ -17,7 +17,7 @@ set more off
 
 *START BY OPENING THE analysis.dta
 *DATA FILE
-use ../Analysis-Data/analysis.dta
+use "Analysis-Data/analysis.dta", clear
 
 ********************************************************
 ********************************************************
@@ -54,7 +54,9 @@ use ../Analysis-Data/analysis.dta
 			ytitle(Percent Frequency)  ///
 			ti("Percent Frequency Distribution of drunk") ///
 			legend(label(1 0) label(2 1)) ///
-			saving(../Graphs/For-Data-Appendix/drunk-distn.gph, replace)
+			saving("Graphs/For-Data-Appendix/drunk-distn.gph", replace)
+			
+			graph export "Graphs/For-Data-Appendix/drunk-distn.png", replace
 	
 *FOR THE VARIABLE hsdrunk
 
@@ -73,7 +75,9 @@ use ../Analysis-Data/analysis.dta
 			ytitle(Percent Frequency) ///
 			legend(label(1 0) label(2 1)) ///
 			ti("Percent Frequency Distribution of hsdrunk") ///
-			saving(../Graphs/For-Data-Appendix/hsdrunk-drunk.gph, replace)
+			saving("Graphs/For-Data-Appendix/hsdrunk-drunk.gph", replace)
+			
+			graph export "Graphs/For-Data-Appendix/hsdrunk-drunk.png", replace
 				
 *FOR THE VARIABLE free
 
@@ -93,7 +97,9 @@ use ../Analysis-Data/analysis.dta
 			ytitle(Percent Frequency) ///
 			legend(label(1 0) label(2 1)) ///
 			ti("Percent Frequency Distribution of free") ///
-			saving(../Graphs/For-Data-Appendix/free-dist.gph, replace)
+			saving("Graphs/For-Data-Appendix/free-dist.gph", replace)
+			
+			graph export "Graphs/For-Data-Appendix/free-dist.png", replace
 		
 *FOR THE VARIABLE volfree
 
@@ -122,7 +128,9 @@ use ../Analysis-Data/analysis.dta
 			ytitle(Percent Frequency) ///
 			legend(label(1 0) label(2 1)) ///
 			ti("Percent Frequency Distribution of volfree") ///
-			saving(../Graphs/For-Data-Appendix/volfree-dist.gph, replace)
+			saving("Graphs/For-Data-Appendix/volfree-dist.gph", replace)
+			
+			graph export "Graphs/For-Data-Appendix/volfree-dist.png", replace
 		
 *FOR THE VARIABLE housing
 
@@ -147,6 +155,8 @@ use ../Analysis-Data/analysis.dta
 				)) ///	
 		ytitle(Percent Frequency) ///
 		ti("Percent Frequency Distribution of housing") ///
-		saving(../Graphs/For-Data-Appendix/housing-dist.gph, replace)
+		saving("Graphs/For-Data-Appendix/housing-dist.gph", replace)
+		
+		graph export "Graphs/For-Data-Appendix/housing-dist.png", replace
 		
 	

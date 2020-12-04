@@ -20,7 +20,7 @@ set more off
 
 *START BY OPENING THE analysis.dta
 *DATA FILE
-use ../Analysis-Data/analysis.dta
+use "Analysis-Data/analysis.dta", clear
 
 
 
@@ -35,7 +35,9 @@ graph bar drunk, ///
 	ytitle("Proportion drunk 3 or more times in past 30 days") ///
 	caption("Figure 1: Rates of Heavy Drinking in Alcohol-Free" ///
 	"               Versus Not Alcohol-Free Housing") ///
-	saving(../Graphs/For-Report/Figure1.gph, replace) 
+	saving("Graphs/For-Report/Figure1.gph", replace)
+	
+	graph export "Graphs/For-Report/Figure1.png", replace
 	
 /*You were not expected to use all the options that are shown in the preceding command.
 It would have been sufficient just to use this command:
@@ -55,7 +57,9 @@ graph bar drunk, ///
 		)) ///
 	ytitle("Proportion drunk 3 or more times in past 30 days") ///
 	caption("Figure 2: Students in Alcohol-Free Housing By Choice versus Assignment") ///
-	saving(../Graphs/For-Report/Figure2.gph, replace) 
+	saving("Graphs/For-Report/Figure2.gph", replace) 
+	
+	graph export "Graphs/For-Report/Figure2.png", replace
 	
 
 	/*It would have been sufficient just to use this command:
@@ -86,7 +90,9 @@ graph bar drunk, ///
 		)) ///
 	ytitle("Proportion drunk 3 or more times in past 30 days") ///
 	caption("Figure 3: Drinking by Students in All Housing Types") ///
-	saving(../Graphs/For-Report/Figure3.gph, replace)
+	saving("Graphs/For-Report/Figure3.gph", replace)
+	
+	graph export "Graphs/For-Report/Figure3.png", replace
 	
 *THIS COMMAND GENERATES FIGURE 4
 
@@ -112,7 +118,9 @@ graph bar drunk, ///
 	ytitle("Proportion drunk 3 or more times in past 30 days") ///
 	caption("Figure 4: Students in Alcohol-Free versus not Alcohol-Free Housing" ///
 	"               Controlling for HS Drinking") ///
-	saving(../Graphs/For-Report/Figure4.gph, replace)
+	saving("Graphs/For-Report/Figure4.gph", replace)
+	
+	graph export "Graphs/For-Report/Figure4.png", replace
 	
 
 		
@@ -139,7 +147,9 @@ graph bar drunk, ///
 			)) ///
 	ytitle("Proportion drunk 3 or more times in past 30 days") ///
 	caption("Figure 5: Students in Alcohol-Free Housing By Choice versus Assignment") ///
-	saving(../Graphs/For-Report/Figure5.gph, replace)
+	saving("Graphs/For-Report/Figure5.gph", replace)
+	
+	graph export "Graphs/For-Report/Figure5.png", replace
 	
 
 *THIS COMMAND GENERATES FIGURE 6
@@ -168,5 +178,7 @@ graph bar drunk, ///
 	ytitle("Proportion drunk 3 or more times in past 30 days") ///
 	caption("Figure 6: Students in All Housing Types" ///
 	"               Controlling for HS Drinking") ///
-	saving(../Graphs/For-Report/Figure6.gph, replace)
+	saving("Graphs/For-Report/Figure6.gph", replace)
+	
+	graph export "Graphs/For-Report/Figure6.png", replace
 

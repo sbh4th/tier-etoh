@@ -8,3 +8,11 @@ THAT RUNS THE FOLLOWING DO-FILES:
 THEN CREATES THE REPORT IN A FILE 
 CALLED report.pdf
 */
+
+do "Command-Files/1-processing.do"
+
+do "Command-Files/2-analysis.do"
+
+do "Command-Files/3-data-appendix.do"
+
+do "Command-Files/4-report.do"

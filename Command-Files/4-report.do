@@ -39,7 +39,7 @@ http://data.princeton.edu/stata/markdown */
 cd "Reports"
 
 * generate report
-markstat using "report.stmd", pdf strict
+markstat using "report.stmd", pdf bib strict
 
 * back to project directory
 cd ..

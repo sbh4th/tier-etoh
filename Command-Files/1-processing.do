@@ -24,7 +24,7 @@ set more off
 *Since that file is in the Original-Data folder, which is not
 *the working directory, write a relative directory path to specify
 *where it is located.
-use ../Original-Data/04291-0001-Data.dta
+use "Original-Data/04291-0001-Data.dta", clear
 
 
 *Drop all cases for which the student's residence is "Off-campus house/apt"
@@ -156,5 +156,5 @@ drop if housing==.
 *Save the modified data in a file called "analysis.dta"
 *Use a relative directory path to make sure "analysis.dta" is saved
 	*in the "Analysis-Data" folder
-save ../Analysis-Data/analysis.dta, replace	
+save "Analysis-Data/analysis.dta", replace	
 
