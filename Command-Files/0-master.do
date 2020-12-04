@@ -7,6 +7,12 @@ THAT RUNS THE FOLLOWING DO-FILES:
 
 THEN CREATES THE REPORT IN A FILE 
 CALLED report.pdf
+
+
+Note that markstat includes a number of dependencies that may
+be specific to your operating system. See
+http://data.princeton.edu/stata/markdown
+
 */
 
 do "Command-Files/1-processing.do"
