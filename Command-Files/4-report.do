@@ -19,17 +19,10 @@ CALLED analysis.dta
  - Current directory is one step above these subfolders:
 
   --| current
-       --| code
-       --| data-clean
-       --| data-source
-       --| manuscripts
-
-The following packages are needed for estimation to replicate this
-analysis, but are commented out in this file because they are
-already installed
-
-* net install spost13_ado, from(https://jslsoc.sitehost.iu.edu/stata)
-* ssc install estout, replace
+       --| Analysis-Data
+       --| Command-Files
+       --| Original-Data
+       --| Reports
 
 Note that markstat includes a number of dependencies that may
 be specific to your operating system. See
